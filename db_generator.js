@@ -33,8 +33,7 @@ _.times(5, function(n) {
 });
 
 _.times(10, function(n) {
-  db.get('movies')
-    .get('data')
+  db.get('movies.data')
     .push({
       id: n + 1,
       name: faker.lorem.words(),
