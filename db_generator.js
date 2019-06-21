@@ -7,7 +7,7 @@ var FileSync = require('lowdb/adapters/FileSync');
 var adapter = new FileSync('db.json');
 var db = low(adapter);
 
-db.defaults({ users: [], companies: [], movies: [] }).write();
+db.defaults({ users: [], companies: [], movies: { data: [] } }).write();
 
 _.times(10, function(n) {
   db.get('users')
@@ -32,8 +32,9 @@ _.times(5, function(n) {
     .write();
 });
 
-_.times(20, function(n) {
+_.times(10, function(n) {
   db.get('movies')
+    .get('data')
     .push({
       id: n + 1,
       name: faker.lorem.words(),

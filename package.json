@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "json:server": "json-server --watch db.json",
-    "generate:db": "node ./db_generator"
+    "generate:db": "truncate -s 0 db.json && node ./db_generator"
   },
   "author": "",
   "license": "ISC",
