@@ -9,7 +9,7 @@ module.exports = function() {
         firstName: faker.name.findName(),
         lastName: faker.name.lastName(),
         avatar: faker.internet.avatar(),
-        age: faker.random.number(18, 60),
+        age: faker.random.number(60),
         companyId: faker.random.number(5)
       };
     }),
